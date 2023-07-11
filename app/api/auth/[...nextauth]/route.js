@@ -12,6 +12,8 @@ const handler = NextAuth({
         })
     ],
 
+    callbacks: {
+    
     async session({session}){
         //confirm the online user
         const  sessionUser = await User.findOne({
@@ -42,6 +44,9 @@ const handler = NextAuth({
         }
 
     }
+
+ }
+ 
 })
 
 export {handler as GET, handler as POST};
